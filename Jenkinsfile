@@ -11,4 +11,11 @@ node{
     thanks
     Thang''', cc: '', from: '', replyTo: '', subject: 'jenkins jobs', to: 'phamthang3003@gmail.com'
   }
+  stage('slack nofitication'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', 
+    channel: '#jenkins-pipline-demo', color: 'good', 
+    message: 'welcome to jenkins, Slack!', 
+    tokenCredentialId: 'slack-demo', 
+    username: 'jenkins-job'
+  }
 }
